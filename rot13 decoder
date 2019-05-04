@@ -1,0 +1,21 @@
+function rot13(str) { // LBH QVQ VG!
+var cA = "A".charCodeAt(0);
+var cN = "N".charCodeAt(0);
+var cZ = "Z".charCodeAt(0);
+var decodeArr = [];
+
+for(var i =0; i<str.length; i++){
+    var decode = str.charCodeAt(i);
+    if(decode>=cA && decode<=cZ){
+        if(decode>=cN)
+            decodeArr.push(String.fromCharCode(decode-13));
+        else
+            decodeArr.push(String.fromCharCode(decode+13));
+    }else{
+        decodeArr.push(str[i]);}
+    }
+     return decodeArr.join("");
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");
